@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7d9df">
+<title>Bethany Arcadia | Mis XV Años</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --rose:#d77c8c;
+  --rose-dark:#9c5868;
+  --pink:#f7dce3;
+  --cream:#fff9f6;
+  --ink:#5b4549;
+  --gold:#c89b72;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Montserrat,sans-serif;
+  overflow-x:hidden;
+}
+section{padding:78px 20px;text-align:center;position:relative}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500}
+.script{font-family:"Great Vibes",cursive;color:var(--rose)}
+.subtitle{
+  font-size:10px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--rose-dark);
+  margin-bottom:12px;
+}
+.title{
+  font-size:52px;
+  line-height:1;
+  color:var(--rose-dark);
+}
+.flower{
+  color:#e6a8b4;
+  font-size:24px;
+  margin:18px auto;
+}
+.hero{
+  min-height:100svh;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  overflow:hidden;
+  color:white;
+  padding:0;
+}
+.hero img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 45%;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(54,28,37,.82) 0%,
+    rgba(54,28,37,.30) 48%,
+    rgba(54,28,37,.05) 100%
+  );
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:760px;
+  padding:30px 25px 70px;
+}
+.hero .subtitle{color:#f9e5ea}
+.hero h1{
+  font-size:clamp(70px,17vw,130px);
+  line-height:.7;
+  color:#fff2f4;
+}
+.hero .script{
+  font-size:clamp(60px,13vw,105px);
+  line-height:1;
+  color:#f6a9b8;
+}
+.hero-date{
+  letter-spacing:7px;
+  font-size:13px;
+  margin-top:22px;
+}
+.music-floating{
+  position:absolute;
+  z-index:4;
+  top:25px;
+  right:20px;
+  width:64px;
+  height:64px;
+  border:1px solid rgba(255,255,255,.6);
+  border-radius:50%;
+  background:rgba(155,78,96,.55);
+  color:#fff;
+  cursor:pointer;
+  backdrop-filter:blur(8px);
+}
+.music-floating span{
+  display:block;
+  font-size:10px;
+  margin-top:4px;
+}
+.intro{
+  background:
+    radial-gradient(circle at 0 0,#f9dbe4 0,transparent 28%),
+    radial-gradient(circle at 100% 100%,#f7d6df 0,transparent 30%),
+    var(--cream);
+}
+.intro:before,.intro:after{
+  content:"✿";
+  position:absolute;
+  color:#e8aab6;
+  opacity:.45;
+  font-size:90px;
+}
+.intro:before{left:5%;top:25px}
+.intro:after{right:5%;bottom:25px}
+.message{
+  max-width:650px;
+  margin:28px auto 0;
+  line-height:2;
+  font-size:15px;
+}
+.details{
+  background:#fffaf8;
+}
+.detail-grid{
+  max-width:850px;
+  margin:40px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:#edd0d6;
+  border:1px solid #edd0d6;
+}
+.detail{
+  background:#fffaf8;
+  padding:30px 15px;
+}
+.icon{
+  font-size:25px;
+  color:var(--rose);
+  margin-bottom:10px;
+}
+.detail small{
+  display:block;
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#9f737b;
+  margin-bottom:8px;
+}
+.detail strong{
+  font-family:"Cormorant Garamond",serif;
+  font-size:25px;
+  font-weight:500;
+  color:var(--rose-dark);
+}
+.map{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 28px;
+  border-radius:30px;
+  background:var(--rose);
+  color:white;
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:1px;
+}
+.count-section{
+  background:linear-gradient(135deg,#f9e3e8,#fff8f5);
+}
+.count-wrap{
+  max-width:760px;
+  margin:35px auto 0;
+  padding:24px;
+  border:1px solid #efcbd4;
+  border-radius:60px;
+  background:rgba(255,255,255,.55);
+}
+.count{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+.count strong{
+  display:block;
+  font-family:"Cormorant Garamond",serif;
+  font-size:48px;
+  color:var(--rose-dark);
+}
+.count span{
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.gallery-section{
+  background:#fffaf8;
+}
+.gallery{
+  max-width:1050px;
+  margin:38px auto 0;
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:170px;
+  gap:12px;
+}
+.g{
+  overflow:hidden;
+  border-radius:18px;
+  box-shadow:0 7px 25px rgba(100,50,60,.08);
+}
+.g img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s;
+}
+.g:hover img{transform:scale(1.04)}
+.g1{grid-column:span 5;grid-row:span 2}
+.g2{grid-column:span 4;grid-row:span 2}
+.g3{grid-column:span 3;grid-row:span 1}
+.g4{grid-column:span 3;grid-row:span 1}
+.g5{grid-column:span 4;grid-row:span 1}
+.music-section{
+  background:
+    radial-gradient(circle at 20% 20%,#f9d8e1 0,transparent 30%),
+    #fff9f7;
+}
+.music-card{
+  max-width:650px;
+  margin:35px auto 0;
+  padding:25px;
+  border:1px solid #efd0d7;
+  border-radius:60px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:rgba(255,255,255,.8);
+}
+.music-cover{
+  width:58px;height:58px;border-radius:50%;
+  object-fit:cover;
+}
+.music-info{text-align:left;flex:1}
+.music-info b{
+  display:block;
+  color:var(--rose-dark);
+  font-family:"Cormorant Garamond",serif;
+  font-size:23px;
+}
+.music-info span{font-size:10px;color:#8d7075}
+.music-btn{
+  width:48px;height:48px;border:0;border-radius:50%;
+  background:var(--rose);color:white;cursor:pointer;
+}
+.confirm{
+  background:linear-gradient(180deg,#fff9f7,#f8dce3);
+}
+.confirm .message{max-width:520px}
+.confirm-btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:15px 30px;
+  border-radius:30px;
+  background:var(--rose-dark);
+  color:#fff;
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:1px;
+}
+footer{
+  background:#a25d6c;
+  color:white;
+  padding:65px 20px;
+  text-align:center;
+}
+footer h2{
+  font-size:58px;
+  color:#fff2f4;
+}
+footer p{font-size:11px;margin-top:10px;letter-spacing:1px}
+@media(max-width:650px){
+  section{padding:62px 18px}
+  .detail-grid{grid-template-columns:1fr}
+  .detail{padding:22px}
+  .count-wrap{border-radius:28px}
+  .count{grid-template-columns:repeat(2,1fr);gap:18px}
+  .count strong{font-size:40px}
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:210px;
+  }
+  .g1,.g2,.g3,.g4,.g5{grid-column:span 1;grid-row:span 1}
+  .g1{grid-column:span 2}
+  .music-card{border-radius:25px;padding:18px}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop preload="auto">
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+  <img src="DSC04819.jpg" alt="Bethany Arcadia">
+  <button class="music-floating" id="floatingMusic">▶<span>Música</span></button>
+
+  <div class="hero-content">
+    <div class="subtitle">Mis XV Años</div>
+    <h1>Bethany</h1>
+    <div class="script">Arcadia</div>
+    <div class="hero-date">22 · 11 · 2026</div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="subtitle">Te invito a celebrar</div>
+  <h2 class="title script">Mis XV Años</h2>
+  <div class="flower">♡</div>
+  <p class="message">
+    Quiero compartir contigo uno de los días más especiales de mi vida.
+    Será una noche llena de momentos, alegría y recuerdos que guardaré
+    para siempre en mi corazón.
+    <br><br>
+    ¡Espero contar con tu presencia!
+  </p>
+</section>
+
+<section class="details">
+  <div class="subtitle">El gran día</div>
+  <h2 class="title">Celebremos juntos</h2>
+
+  <div class="detail-grid">
+    <div class="detail">
+      <div class="icon">♡</div>
+      <small>Fecha</small>
+      <strong>22 de noviembre<br>de 2026</strong>
+    </div>
+
+    <div class="detail">
+      <div class="icon">◷</div>
+      <small>Hora</small>
+      <strong>3:00 PM</strong>
+    </div>
+
+    <div class="detail">
+      <div class="icon">⌖</div>
+      <small>Lugar</small>
+      <strong>La Labor,<br>Nayarit</strong>
+    </div>
+  </div>
+
+  <a class="map"
+     href="https://www.google.com/maps/search/?api=1&query=La+Labor,+Nayarit,+Mexico"
+     target="_blank" rel="noopener noreferrer">
+    ⌖ &nbsp; VER UBICACIÓN
+  </a>
+</section>
+
+<section class="count-section">
+  <div class="subtitle">La cuenta regresiva</div>
+  <h2 class="title">Faltan...</h2>
+
+  <div class="count-wrap">
+    <div class="count">
+      <div><strong id="days">00</strong><span>Días</span></div>
+      <div><strong id="hours">00</strong><span>Horas</span></div>
+      <div><strong id="minutes">00</strong><span>Minutos</span></div>
+      <div><strong id="seconds">00</strong><span>Segundos</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="subtitle">Mis momentos</div>
+  <h2 class="title">Mi Galería</h2>
+
+  <div class="gallery">
+    <div class="g g1"><img src="DSC04819.jpg" alt="Bethany"></div>
+    <div class="g g2"><img src="DSC05145.jpg" alt="Bethany"></div>
+    <div class="g g3"><img src="DSC02789.jpg" alt="Bethany"></div>
+    <div class="g g4"><img src="DSC02908.jpg" alt="Bethany"></div>
+    <div class="g g5"><img src="DSC07729.jpg" alt="Bethany"></div>
+  </div>
+</section>
+
+<section class="music-section">
+  <div class="subtitle">Una canción especial</div>
+  <h2 class="title script">Bruno Mars</h2>
+
+  <div class="music-card">
+    <img class="music-cover" src="DSC07729.jpg" alt="Bethany">
+    <div class="music-info">
+      <b>Una canción especial</b>
+      <span>Bruno Mars · Mis XV Años</span>
+    </div>
+    <button class="music-btn" id="musicButton">▶</button>
+  </div>
+  <p id="musicMessage" style="font-size:10px;color:#9d737b;margin-top:12px"></p>
+</section>
+
+<section class="confirm">
+  <div class="subtitle">Tu presencia es importante</div>
+  <h2 class="title script">¿Nos acompañas?</h2>
+
+  <p class="message">
+    Confirma tu asistencia y acompáñame a celebrar este momento
+    tan especial.
+  </p>
+
+  <a class="confirm-btn"
+     href="https://wa.me/521XXXXXXXXXX?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Bethany."
+     target="_blank" rel="noopener noreferrer">
+    CONFIRMAR ASISTENCIA
+  </a>
+</section>
+
+<footer>
+  <h2 class="script">Bethany</h2>
+  <p>22 · 11 · 2026</p>
+  <p>Gracias por ser parte de mis XV años. ♡</p>
+</footer>
+
+<script>
+const eventDate = new Date("November 22, 2026 15:00:00").getTime();
+
+function countdown(){
+  const d = eventDate - Date.now();
+  if(d <= 0){
+    ["days","hours","minutes","seconds"].forEach(id => document.getElementById(id).textContent="00");
+    return;
+  }
+  document.getElementById("days").textContent =
+    String(Math.floor(d/(1000*60*60*24))).padStart(2,"0");
+  document.getElementById("hours").textContent =
+    String(Math.floor((d/(1000*60*60))%24)).padStart(2,"0");
+  document.getElementById("minutes").textContent =
+    String(Math.floor((d/(1000*60))%60)).padStart(2,"0");
+  document.getElementById("seconds").textContent =
+    String(Math.floor((d/1000)%60)).padStart(2,"0");
+}
+countdown();
+setInterval(countdown,1000);
+
+const music = document.getElementById("music");
+const musicButton = document.getElementById("musicButton");
+const floatingMusic = document.getElementById("floatingMusic");
+const musicMessage = document.getElementById("musicMessage");
+
+function playing(){
+  musicButton.textContent="❚❚";
+  floatingMusic.innerHTML="❚❚<span>Música</span>";
+  musicMessage.textContent="";
+}
+function paused(){
+  musicButton.textContent="▶";
+  floatingMusic.innerHTML="▶<span>Música</span>";
+}
+function startMusic(){
+  music.play().then(playing).catch(()=>{
+    musicMessage.textContent="Toca la pantalla para activar la música.";
+  });
+}
+
+musicButton.addEventListener("click",()=>{
+  music.paused ? startMusic() : (music.pause(),paused());
+});
+floatingMusic.addEventListener("click",()=>{
+  music.paused ? startMusic() : (music.pause(),paused());
+});
+
+window.addEventListener("load",startMusic);
+
+/* Intento de autoplay tras la primera interacción del visitante. */
+document.addEventListener("pointerdown",function firstTouch(){
+  if(music.paused) startMusic();
+  document.removeEventListener("pointerdown",firstTouch);
+},{passive:true});
+</script>
+
+</body>
+</html>
